@@ -33,7 +33,7 @@ int main(void){
 double kappa;
 double nu;
 double c1, c2, c3, c4;
-double mu, mu1, lambda, lambda1;
+double mu, mu1, lambda, lambda1, e, e1;
 double A[3][3], B[3];
 double Omega11, Omega22, Omega12;
 double eps[4];
@@ -63,16 +63,19 @@ double sig11s, sig22s, sig12s;
 double complex eq21a, eq21b;
 FILE *fp1;
 
+nu = 0.3;
 a = 30.001; /* Major axis of the elliptic precipitate */
 b = 30.0; /* Minor axis of the elliptic precipitate */
-mu = 200.0; /*  The shear modulus of the matrix phase */
+e = 210; /* Young's modulus of the matrix */
+mu = e/(2*(1+nu)); /*  The shear modulus of the matrix phase */
 lambda = 300.0; /* The other Lame's constant for the matrix phase */
-mu1 = 2.0*mu; /* The shear modulus of the precipitate phase */
+e1 = 210; /* Young's modulus of the precipitate phase */
+mu1 = e1/(2*(1+nu)); /* The shear modulus of the precipitate phase */
 lambda1 = 2.0*lambda; /*The other Lame's constant for the precipitate phase */
 Omega11 = 0.01; /* The 11 component of the eigenstrain */
 Omega22 = 0.005; /* The 22 component of the eigenstrain */
 Omega12 = 0.0; /* The 12 component of the eigenstrain */
-nu = lambda/(2.0*(lambda+mu));
+//nu = lambda/(2.0*(lambda+mu));
 
 kappa = 3.0-4.0*nu; /* Plane strain condition */
 
