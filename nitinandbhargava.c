@@ -222,7 +222,7 @@ int main(void)
 				sig12 = sig12 + sig12s;
 			}
 			if (j == 0)
-				fprintf(fp1, "%le %le %le %le %le\n", X / 30.0, Y, sig11 / 4.0, sig22 / 4.0, sig12 / 4.0);
+				fprintf(fp1, "%le %le %le %le %le\n", X, Y, sig11, sig22, sig12);
 		}
 	}
 	fclose(fp1);
