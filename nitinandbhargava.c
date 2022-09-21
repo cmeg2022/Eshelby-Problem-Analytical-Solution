@@ -67,7 +67,7 @@ int main(void)
 	FILE *input;
 
 	// Input parameters from input file
-	input = fopen("input", "r");
+	input = fopen("inputs", "r");
 	// Read the input parameters
 	char buf[100];
 	fscanf(input, "%s ", buf);
